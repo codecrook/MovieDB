@@ -5,9 +5,45 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>MovieDB | Search for your favourite movie here</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link 
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     </head>
     <body>
+        <div class="header"> MovieDB </div>
+
+        <div class="search-box-container">
+            <input type="text" id="search-box" class="search-box" placeholder="Search your movie here">
+            <button class="search-button"><i class="fa fa-search"></i></button>
+            <select class="sort-by">
+                <option class="sort-option" value="sort-by-name">sort by name</option>
+                <option class="sort-option" value="sort-by-ratings">sort by ratings</option>
+                <option class="sort-option" value="sort-by-year">sort by year</option>
+            </select>
+        </div>
+        <div class="main-container">
+            <div class="movie">
+                <div class="movie-title">Avatar</div>
+                <span class="movie-rating">4.2 <i class="fa fa-star" style="color:goldenrod;"></i></span>
+                <div class="movie-info-card info-first">
+                    Language: <span class="movie-language">English</span><br>
+                    Genres : <span class="movie-genres">Action|Adventure|Fantasy|Sci-Fi</span> <br>
+                </div>
+
+                <div class="movie-info-card info-second">
+                    Director: <span class="movie-director">James Cameron</span> <br>
+                    Casts:<br>
+                    <ul>
+                        <li class="movie-cast">CCH Pounder</li>
+                        <li class="movie-cast">Joel David Moore</li>
+                    </ul>
+                </div>
+                <a href="http://www.imdb.com/titl…0499549/?ref_=fn_tt_tt_1">See on IMDb</a>
+            </div>
+
+        </div>
         
         <script src="./js/main.js"></script>
     </body>
