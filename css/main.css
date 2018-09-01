@@ -29,6 +29,7 @@ body {
     font-size: 1.5em;
     margin: 0px;
     padding-left: 5px;
+    text-align: center;
     width: 50%;
 }
 
@@ -53,7 +54,8 @@ body {
 }
 
 .main-container {
-    padding: 20px 0px 20px 10px;
+    text-align: center;
+    padding: 20px 0px 20px 10%;
 }
 
 .movie {
@@ -62,8 +64,11 @@ body {
     box-shadow: 5px 3px 3px  rgba(76, 63, 72, 0.4);
     -webkit-box-shadow: 5px 3px 3px  rgba(76, 63, 72, 0.4);
     -moz-box-shadow: 5px 3px 3px  rgba(76, 63, 72, 0.4);
+    font-size: 10px;
     float: left;
     margin: 10px 10px 10px 10px;
+    height: 200px;
+    overflow: hidden;
     padding: 5px;
     position: relative;
     width: 20%;
@@ -72,14 +77,14 @@ body {
 .movie-info-card{
     border-radius:5px;
     box-shadow: 2px 1px 1px  rgba(76, 63, 72, 0.5);
-    clear: both;
     -webkit-box-shadow: 2px 1px 1px  rgba(76, 63, 72, 0.5);
     -moz-box-shadow: 2px 1px 1px  rgba(76, 63, 72, 0.5);
-    font-family: Georgia, serif;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: bold;
     margin: 3px;
     overflow: hidden;
     padding: 3px;
+    text-align: left !important;
 }
 
 .info-first {
@@ -92,25 +97,23 @@ body {
 }
 
 .movie-title {
-    float: left;
-    font-size: 1.1em;
+    font-size: 12px;
     font-weight: bold;
     padding-bottom: 5px;
-    width: 60%;
 }
 
 .movie-rating {
-    float: right;
-    font-size: 0.8em;
+    font-size: 10px;
     font-style: italic;
     font-weight: bold;
 }
 
 .movie-language,
 .movie-genres,
+.movie-year,
 .movie-director,
 .movie-cast {
-    font-size: 0.8em;
+    font-size: 10px;
     font-style: italic;
     font-weight: 500;
 }
