@@ -3,14 +3,21 @@
 
     const moviesDisplayArea = document.querySelector('.main-container');
     const searchBox = document.querySelector('.search-box');
+    const searchButton = document.querySelector('.search-button');
     let movies = [];
-    let searchQuery = '';
 
-    //window.addEventListener('keyup', getData(e));
+    searchBox.addEventListener('keyup', e => {
+        e.preventDefault();
+        if (e.keyCode === 13) searchButton.click();
+    });
 
-    function search(arr, searchQuery) {
+    searchButton.addEventListener('click', e => {
+        location.reload();
+    });
+
+    function search(arr, searchTerm) {
         for (let i = 0; i < arr.length; i++){
-        if (!(arr[i].movie_title.toLowerCase().includes(searchQuery))){
+        if (!(arr[i].movie_title.toLowerCase().includes(searchTerm.toLowerCase()))){
                 arr[i] = '';
             }
         }
@@ -33,8 +40,9 @@
                 movieList.forEach(entry => {
                     movies.push(entry);
                 });
-        
-                movies = search(movies, '');
+
+                let searchQuery = searchBox.value;
+                movies = search(movies, searchQuery);
 
                 movies.forEach(movie => {
                     if (!movie) return;
@@ -58,7 +66,6 @@
                                     <a href="${movie.movie_imdb_link}">See on IMDb</a>
                                 </div>`;
                 });
-
                 moviesDisplayArea.innerHTML = movieCode;
             });
         })
