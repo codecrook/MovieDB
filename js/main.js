@@ -1,8 +1,21 @@
 (function() {
     'use strict';
 
-    let moviesDisplayArea = document.querySelector('.main-container');
+    const moviesDisplayArea = document.querySelector('.main-container');
+    const searchBox = document.querySelector('.search-box');
     let movies = [];
+    let searchQuery = '';
+
+    //window.addEventListener('keyup', getData(e));
+
+    function search(arr, searchQuery) {
+        for (let i = 0; i < arr.length; i++){
+        if (!(arr[i].movie_title.toLowerCase().includes(searchQuery))){
+                arr[i] = '';
+            }
+        }
+        return arr;
+    }
 
     (function getData(){
 
@@ -10,13 +23,22 @@
 
         fetch('http://starlord.hackerearth.com/movieslisting')
         .then(response => {
-            if (!response.ok) console.log('Problem getting data. STAUS:' + response.status);
+
+            if (!response.ok) {
+                alert(`Can't fetch data from server!`);
+                console.log(`Problem getting data. STAUS CODE: ${response.status}`);
+            }
 
             response.json().then(movieList => {
                 movieList.forEach(entry => {
                     movies.push(entry);
                 });
-                movies.forEach(movie =>{
+        
+                movies = search(movies, '');
+
+                movies.forEach(movie => {
+                    if (!movie) return;
+
                     movieCode += `<div class="movie">
                                     <div class="movie-title">${movie.movie_title}</div>
                                         Content Rating: <span class="movie-rating">${movie.content_rating}</span>
@@ -45,5 +67,5 @@
             console.log(error);
         });
     })();
-           
+
 })();
