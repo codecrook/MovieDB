@@ -15,15 +15,6 @@
         location.reload();
     });
 
-    function search(arr, searchTerm) {
-        for (let i = 0; i < arr.length; i++){
-        if (!(arr[i].movie_title.toLowerCase().includes(searchTerm.toLowerCase()))){
-                arr[i] = '';
-            }
-        }
-        return arr;
-    }
-
     (function getData(){
 
         let movieCode = '';
@@ -41,9 +32,10 @@
                     movies.push(entry);
                 });
 
+                //code for search functionality
                 let searchQuery = searchBox.value;
-                movies = search(movies, searchQuery);
-
+                movies = movies.filter(movie => movie.movie_title.toLowerCase().includes(searchQuery.toLowerCase()));
+                
                 movies.forEach(movie => {
                     if (!movie) return;
 
